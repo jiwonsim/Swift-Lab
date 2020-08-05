@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller InUSV-->
+        <scene sceneID="p4Z-vc-HKw">
+            <objects>
+                <viewController storyboardIdentifier="UsingScrollView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xgd-jj-bNf" customClass="ViewControllerInUSV" customModule="OnboardingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sZO-Hz-0b1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-2L-dqf">
+                                <rect key="frame" x="38" y="725" width="80" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="JZo-FS-veH"/>
+                                    <constraint firstAttribute="width" constant="80" id="SJW-Ri-Zf0"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.93726748230000001" green="0.93723225590000003" blue="0.93725609779999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="changingPage:" destination="Xgd-jj-bNf" eventType="valueChanged" id="g5h-rw-XXp"/>
+                                </connections>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRD-6l-u8p">
+                                <rect key="frame" x="326" y="725" width="50" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ay6-z2-9HD"/>
+                                    <constraint firstAttribute="height" constant="37" id="fYa-XQ-8ZO"/>
+                                </constraints>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="movingToNext:" destination="Xgd-jj-bNf" eventType="touchUpInside" id="04X-TX-vs0"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xlt-wS-Qna">
+                                <rect key="frame" x="0.0" y="44" width="414" height="671"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="10P-a3-lO6"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ZdJ-xg-eGT"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TY-9f-PYS">
+                                <rect key="frame" x="0.0" y="782" width="416" height="80"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2Lx-xz-7ta"/>
+                                    <constraint firstAttribute="width" constant="416" id="xjE-wj-ni5"/>
+                                </constraints>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipping:" destination="Xgd-jj-bNf" eventType="touchUpInside" id="Qf0-4W-Kgc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Szt-M0-SkK" firstAttribute="bottom" secondItem="3TY-9f-PYS" secondAttribute="bottom" id="57b-3Y-NOY"/>
+                            <constraint firstItem="Szt-M0-SkK" firstAttribute="trailing" secondItem="MRD-6l-u8p" secondAttribute="trailing" constant="38" id="HJX-MR-Gxc"/>
+                            <constraint firstItem="YTP-2L-dqf" firstAttribute="top" secondItem="MRD-6l-u8p" secondAttribute="top" id="T0Z-oY-I3U"/>
+                            <constraint firstItem="3TY-9f-PYS" firstAttribute="leading" secondItem="Szt-M0-SkK" secondAttribute="leading" id="eLp-gP-TxU"/>
+                            <constraint firstItem="YTP-2L-dqf" firstAttribute="leading" secondItem="Szt-M0-SkK" secondAttribute="leading" constant="38" id="hhA-9s-jjn"/>
+                            <constraint firstItem="3TY-9f-PYS" firstAttribute="top" secondItem="MRD-6l-u8p" secondAttribute="bottom" constant="20" id="j6R-Qt-ga9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Szt-M0-SkK"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="YTP-2L-dqf" id="sd7-PV-bhU"/>
+                        <outlet property="scrollView" destination="Xlt-wS-Qna" id="RPZ-nS-Moq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ce-iy-G2l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>
