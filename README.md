@@ -5,3 +5,6 @@
 
 - Onboarding 
   - UIScrollView를 이용한 Onboarding 화면 구현
+  - UIPageViewController를 이용한 Onboarding 화면 구현 
+    - Page Control과 Button로 페이지 전환하는 기능 [Code](<https://github.com/jiwonsim/Swift-Lab/tree/master/OnboardingProject/OnboardingProject/usingPageVC%2BPageControl>)
+
