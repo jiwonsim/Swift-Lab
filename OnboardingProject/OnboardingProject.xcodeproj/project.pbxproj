@@ -16,6 +16,9 @@
 		E0516F5824D9793600AF696D /* UsingScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0516F5724D9793600AF696D /* UsingScrollView.storyboard */; };
 		E0516F5A24D9794400AF696D /* UsingPageVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0516F5924D9794400AF696D /* UsingPageVC.storyboard */; };
 		E0516F5C24D97B3300AF696D /* ViewControllerInUSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0516F5B24D97B3300AF696D /* ViewControllerInUSV.swift */; };
+		E0516F6424DAE06300AF696D /* UsingPageVC+PageControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0516F6324DAE06300AF696D /* UsingPageVC+PageControl.storyboard */; };
+		E0516F6624DAE07F00AF696D /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0516F6524DAE07F00AF696D /* TutorialViewController.swift */; };
+		E0516F6824DAE15400AF696D /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0516F6724DAE15400AF696D /* TutorialPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E0516F5724D9793600AF696D /* UsingScrollView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsingScrollView.storyboard; sourceTree = "<group>"; };
 		E0516F5924D9794400AF696D /* UsingPageVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsingPageVC.storyboard; sourceTree = "<group>"; };
 		E0516F5B24D97B3300AF696D /* ViewControllerInUSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInUSV.swift; sourceTree = "<group>"; };
+		E0516F6324DAE06300AF696D /* UsingPageVC+PageControl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "UsingPageVC+PageControl.storyboard"; sourceTree = "<group>"; };
+		E0516F6524DAE07F00AF696D /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		E0516F6724DAE15400AF696D /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				E04A404F24CDB8FC000463B9 /* Main.storyboard */,
 				E0516F5624D978C400AF696D /* usingScrollView */,
 				E0516F5524D978B700AF696D /* usingPageVC */,
+				E0516F6224DAE05000AF696D /* usingPageVC+PageControl */,
 				E04A404924CDB8FC000463B9 /* AppDelegate.swift */,
 				E04A404B24CDB8FC000463B9 /* SceneDelegate.swift */,
 				E04A405224CDB8FF000463B9 /* Assets.xcassets */,
@@ -90,6 +97,16 @@
 				E0516F5B24D97B3300AF696D /* ViewControllerInUSV.swift */,
 			);
 			path = usingScrollView;
+			sourceTree = "<group>";
+		};
+		E0516F6224DAE05000AF696D /* usingPageVC+PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				E0516F6324DAE06300AF696D /* UsingPageVC+PageControl.storyboard */,
+				E0516F6524DAE07F00AF696D /* TutorialViewController.swift */,
+				E0516F6724DAE15400AF696D /* TutorialPageViewController.swift */,
+			);
+			path = "usingPageVC+PageControl";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04A405624CDB8FF000463B9 /* LaunchScreen.storyboard in Resources */,
+				E0516F6424DAE06300AF696D /* UsingPageVC+PageControl.storyboard in Resources */,
 				E0516F5824D9793600AF696D /* UsingScrollView.storyboard in Resources */,
 				E04A405324CDB8FF000463B9 /* Assets.xcassets in Resources */,
 				E04A405124CDB8FC000463B9 /* Main.storyboard in Resources */,
@@ -167,6 +185,8 @@
 			files = (
 				E0516F5C24D97B3300AF696D /* ViewControllerInUSV.swift in Sources */,
 				E04A406724CEC566000463B9 /* PageViewController.swift in Sources */,
+				E0516F6824DAE15400AF696D /* TutorialPageViewController.swift in Sources */,
+				E0516F6624DAE07F00AF696D /* TutorialViewController.swift in Sources */,
 				E04A404A24CDB8FC000463B9 /* AppDelegate.swift in Sources */,
 				E04A404C24CDB8FC000463B9 /* SceneDelegate.swift in Sources */,
 			);
