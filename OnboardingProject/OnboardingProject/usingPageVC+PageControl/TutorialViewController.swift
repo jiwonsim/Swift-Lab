@@ -14,6 +14,7 @@ class TutorialViewController: UIViewController {
 
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var skipBtn: UIButton!
     
     var tutorialPageViewController: TutorialPageViewController? {
         didSet { // tutorialPageViewController가 변경되면 위임한다
@@ -23,10 +24,15 @@ class TutorialViewController: UIViewController {
     
     // MARK: Actions
     
+    // 세그웨이를 통해 화면 전환시 데이터를 주고 받는 부분(prepareForSegue)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tutorialPageViewController = segue.destination as? TutorialPageViewController {
             self.tutorialPageViewController = tutorialPageViewController
         }
+    }
+    
+    @IBAction func didTapSkipBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTapNextButton(_ sender: Any) {
@@ -42,6 +48,8 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.addTarget(self, action: #selector(didChangePageControlValue), for: .valueChanged)
+        
+        skipBtn.isHidden = true
     }
 }
 
@@ -58,6 +66,11 @@ extension TutorialViewController: TutorialPageViewControllerDelegate {
     func tutorialPageViewController(tutorialPageViewController: TutorialPageViewController,
         didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
+        
+        if pageControl.currentPage == pageControl.numberOfPages-1 {
+            skipBtn.isHidden = false
+        }
+        else { skipBtn.isHidden = true }
     }
     
 }

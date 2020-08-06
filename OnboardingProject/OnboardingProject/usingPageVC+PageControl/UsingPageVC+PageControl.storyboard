@@ -16,38 +16,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-aG-hS0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="518"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="650"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="650" id="AXq-cC-9xa"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="4AP-2s-bfB" kind="embed" id="a1E-Ef-gp3"/>
                                 </connections>
                             </containerView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JCW-6K-0Jo">
-                                <rect key="frame" x="20" y="570" width="133" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="pageIndicatorTintColor" red="0.93726748230000001" green="0.93723225590000003" blue="0.93725609779999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lj5-QY-Gda">
-                                <rect key="frame" x="288" y="577" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lj5-QY-Gda">
+                                <rect key="frame" x="241" y="714" width="133" height="37"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
                                     <action selector="didTapNextButton:" destination="8gT-An-LLa" eventType="touchUpInside" id="dvz-nY-wM7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-sG-fgK">
+                                <rect key="frame" x="0.0" y="787" width="414" height="80"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TXD-ZJ-bBv"/>
+                                </constraints>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSkipBtn:" destination="8gT-An-LLa" eventType="touchUpInside" id="AbH-wf-144"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JCW-6K-0Jo">
+                                <rect key="frame" x="40" y="714" width="133" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="5oD-Ym-bT5"/>
+                                    <constraint firstAttribute="height" constant="37" id="82Y-9L-DNE"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.93726748230000001" green="0.93723225590000003" blue="0.93725609779999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="WgU-sG-fgK" firstAttribute="width" secondItem="9P4-Nt-0MD" secondAttribute="width" id="2sA-wr-Djh"/>
+                            <constraint firstItem="lj5-QY-Gda" firstAttribute="width" secondItem="JCW-6K-0Jo" secondAttribute="width" id="4Z5-zq-MuW"/>
                             <constraint firstItem="SZq-aG-hS0" firstAttribute="top" secondItem="VZK-ca-c3r" secondAttribute="top" id="6V8-ND-K4s"/>
                             <constraint firstAttribute="trailing" secondItem="SZq-aG-hS0" secondAttribute="trailing" id="Ka8-AQ-jHh"/>
+                            <constraint firstItem="lj5-QY-Gda" firstAttribute="top" secondItem="JCW-6K-0Jo" secondAttribute="top" id="Lny-8F-qyn"/>
                             <constraint firstItem="SZq-aG-hS0" firstAttribute="leading" secondItem="VZK-ca-c3r" secondAttribute="leading" id="Nqb-md-XnY"/>
-                            <constraint firstItem="VZK-ca-c3r" firstAttribute="bottom" secondItem="SZq-aG-hS0" secondAttribute="bottom" constant="300" id="aOV-JG-fzX"/>
+                            <constraint firstItem="WgU-sG-fgK" firstAttribute="leading" secondItem="VZK-ca-c3r" secondAttribute="leading" id="Y7k-Sj-Xv8"/>
+                            <constraint firstItem="VZK-ca-c3r" firstAttribute="trailing" secondItem="lj5-QY-Gda" secondAttribute="trailing" constant="40" id="ai2-Ia-TSC"/>
+                            <constraint firstItem="JCW-6K-0Jo" firstAttribute="top" secondItem="SZq-aG-hS0" secondAttribute="bottom" constant="20" id="bUf-d4-CYN"/>
+                            <constraint firstItem="JCW-6K-0Jo" firstAttribute="leading" secondItem="VZK-ca-c3r" secondAttribute="leading" constant="40" id="pVa-6g-LgC"/>
+                            <constraint firstItem="lj5-QY-Gda" firstAttribute="height" secondItem="JCW-6K-0Jo" secondAttribute="height" id="tKs-pi-cTH"/>
+                            <constraint firstItem="WgU-sG-fgK" firstAttribute="bottom" secondItem="VZK-ca-c3r" secondAttribute="bottom" constant="5" id="yQU-bX-3BI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VZK-ca-c3r"/>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="SZq-aG-hS0" id="gMS-bz-B06"/>
                         <outlet property="pageControl" destination="JCW-6K-0Jo" id="yaJ-3K-Ijs"/>
+                        <outlet property="skipBtn" destination="WgU-sG-fgK" id="Bew-1u-IGx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbg-Mx-9IG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
