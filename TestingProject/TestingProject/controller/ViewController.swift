@@ -15,24 +15,29 @@ class ViewController: UIViewController {
     
     let correctUser = [User("doori", "doori0406"), User("johnny", "johnny0209")]
     
+    private let validation: ValidationService
+
+    init(validation: ValidationService) {
+        self.validation = validation
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        self.validation = ValidationService()
+        super.init(coder: coder)
+    }
+    
     @IBAction func didTapLoginButton(_ sender: Any) {
         do {
-            guard
-                let username = userNameTextField.text,
-                let password = passwordTextField.text
-                else { throw ValidError.invalidValue }
-            
-            guard username.count > 3 else { throw ValidError.usernameTooShort }
-            guard username.count < 20 else { throw ValidError.usernameTooLong }
-            guard password.count > 3 else { throw ValidError.passwordTooShort }
-            guard password.count < 20 else { throw ValidError.passwordTooLong }
+            let username = try validation.validationUsername(userNameTextField.text)
+            let password = try validation.validationPassword(passwordTextField.text)
             
             if let user = correctUser.first(where: { user in
                 user.userName == username && user.password == password
             }) {
                 presentAlert(with: "You successfully logged in as \(user.userName)")
             }
-            else { throw ValidError.invalidValue }
+            else { throw LoginError.invalidCredentials }
         }
         catch {
             present(error)

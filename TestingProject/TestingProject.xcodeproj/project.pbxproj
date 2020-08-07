@@ -18,6 +18,7 @@
 		E035288224DD235300F0894E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E035288124DD235300F0894E /* UIViewController+Alert.swift */; };
 		E035288424DD26F700F0894E /* ViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E035288324DD26F700F0894E /* ViewController+Error.swift */; };
 		E035288624DD323D00F0894E /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E035288524DD323D00F0894E /* ValidationServiceTest.swift */; };
+		E035288C24DD340200F0894E /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E035288B24DD340200F0894E /* ValidationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E035288124DD235300F0894E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		E035288324DD26F700F0894E /* ViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Error.swift"; sourceTree = "<group>"; };
 		E035288524DD323D00F0894E /* ValidationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
+		E035288B24DD340200F0894E /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		E035285924DD1F4C00F0894E /* TestingProject */ = {
 			isa = PBXGroup;
 			children = (
+				E035288A24DD33F800F0894E /* service */,
 				E035288024DD233D00F0894E /* extension */,
 				E035287D24DD22F300F0894E /* model */,
 				E035287C24DD22EA00F0894E /* controller */,
@@ -133,6 +136,14 @@
 				E035288124DD235300F0894E /* UIViewController+Alert.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		E035288A24DD33F800F0894E /* service */ = {
+			isa = PBXGroup;
+			children = (
+				E035288B24DD340200F0894E /* ValidationService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				E035287F24DD22FB00F0894E /* User.swift in Sources */,
 				E035288424DD26F700F0894E /* ViewController+Error.swift in Sources */,
 				E035288224DD235300F0894E /* UIViewController+Alert.swift in Sources */,
+				E035288C24DD340200F0894E /* ValidationService.swift in Sources */,
 				E035285F24DD1F4C00F0894E /* ViewController.swift in Sources */,
 				E035285B24DD1F4C00F0894E /* AppDelegate.swift in Sources */,
 				E035285D24DD1F4C00F0894E /* SceneDelegate.swift in Sources */,
