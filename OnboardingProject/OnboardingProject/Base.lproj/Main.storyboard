@@ -49,15 +49,26 @@
                                     <segue destination="RZU-N6-U5V" kind="show" id="0vP-lc-3IG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-GY-ZWb">
+                                <rect key="frame" x="32" y="479" width="350" height="30"/>
+                                <state key="normal" title="With Localization"/>
+                                <connections>
+                                    <segue destination="v0V-BA-0Nf" kind="show" id="FJH-pp-8yP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="OXk-yL-gaT" firstAttribute="width" secondItem="o2x-Cp-nQy" secondAttribute="width" id="73Y-24-kAW"/>
+                            <constraint firstItem="vuZ-GY-ZWb" firstAttribute="width" secondItem="OXk-yL-gaT" secondAttribute="width" id="7Vj-Ni-xop"/>
                             <constraint firstItem="OXk-yL-gaT" firstAttribute="top" secondItem="o2x-Cp-nQy" secondAttribute="bottom" constant="10" id="C7e-Zq-0iv"/>
                             <constraint firstItem="o2x-Cp-nQy" firstAttribute="centerX" secondItem="giI-Om-KhU" secondAttribute="centerX" id="N9G-z4-FMO"/>
+                            <constraint firstItem="vuZ-GY-ZWb" firstAttribute="centerX" secondItem="giI-Om-KhU" secondAttribute="centerX" id="Wz4-t6-Pwt"/>
                             <constraint firstItem="o2x-Cp-nQy" firstAttribute="top" secondItem="9Hh-Hv-g8X" secondAttribute="bottom" constant="10" id="eFj-lT-Kb9"/>
                             <constraint firstItem="9Hh-Hv-g8X" firstAttribute="top" secondItem="giI-Om-KhU" secondAttribute="top" constant="315" id="gyG-Ny-b6a"/>
                             <constraint firstItem="OXk-yL-gaT" firstAttribute="centerX" secondItem="giI-Om-KhU" secondAttribute="centerX" id="kEV-ZK-0gt"/>
+                            <constraint firstItem="vuZ-GY-ZWb" firstAttribute="leading" secondItem="OXk-yL-gaT" secondAttribute="leading" id="r1k-Ta-3aK"/>
+                            <constraint firstItem="vuZ-GY-ZWb" firstAttribute="top" secondItem="OXk-yL-gaT" secondAttribute="bottom" constant="10" id="r2A-Th-vmG"/>
                             <constraint firstItem="9Hh-Hv-g8X" firstAttribute="centerX" secondItem="giI-Om-KhU" secondAttribute="centerX" id="s9O-A4-jaT"/>
                             <constraint firstItem="o2x-Cp-nQy" firstAttribute="width" secondItem="9Hh-Hv-g8X" secondAttribute="width" id="txy-hu-yCc"/>
                         </constraints>
@@ -87,6 +98,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUZ-MX-jt6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105" y="411"/>
+        </scene>
+        <!--WithLocalization-->
+        <scene sceneID="kZK-aB-zm6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UsingPageVC+PageControl+Localization" referencedIdentifier="WithLocalization" id="v0V-BA-0Nf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xGb-NA-z6f"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7e-jO-iYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="516"/>
         </scene>
     </scenes>
 </document>
