@@ -16,6 +16,10 @@
 		E0CA75EA24E2DF6900A80658 /* Make_ToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA75E924E2DF6900A80658 /* Make_ToastTests.swift */; };
 		E0CA75FE24E53CED00A80658 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA75FD24E53CED00A80658 /* ToastView.swift */; };
 		E0CA760224E53F2900A80658 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CA760124E53F2900A80658 /* ToastView.xib */; };
+		E0CA761024E5869A00A80658 /* ReusableToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA760F24E5869A00A80658 /* ReusableToast.swift */; };
+		E0CA761224E586A100A80658 /* ReusableToast.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CA761124E586A100A80658 /* ReusableToast.xib */; };
+		E0CA761B24E652BD00A80658 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA761A24E652BD00A80658 /* UIView+Extension.swift */; };
+		E0CA761D24E6691100A80658 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA761C24E6691100A80658 /* CALayer+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		E0CA75EB24E2DF6900A80658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CA75FD24E53CED00A80658 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		E0CA760124E53F2900A80658 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		E0CA760F24E5869A00A80658 /* ReusableToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableToast.swift; sourceTree = "<group>"; };
+		E0CA761124E586A100A80658 /* ReusableToast.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableToast.xib; sourceTree = "<group>"; };
+		E0CA761A24E652BD00A80658 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E0CA761C24E6691100A80658 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,8 @@
 		E0CA75D124E2DF6700A80658 /* Make-Toast */ = {
 			isa = PBXGroup;
 			children = (
+				E0CA761924E652B000A80658 /* extension */,
+				E0CA760E24E5866F00A80658 /* with-container */,
 				E0CA75FA24E536A100A80658 /* view */,
 				E0CA75F924E5368E00A80658 /* storyboard */,
 				E0CA75F824E5368500A80658 /* controller */,
@@ -127,6 +137,24 @@
 				E0CA760124E53F2900A80658 /* ToastView.xib */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		E0CA760E24E5866F00A80658 /* with-container */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA760F24E5869A00A80658 /* ReusableToast.swift */,
+				E0CA761124E586A100A80658 /* ReusableToast.xib */,
+			);
+			path = "with-container";
+			sourceTree = "<group>";
+		};
+		E0CA761924E652B000A80658 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA761A24E652BD00A80658 /* UIView+Extension.swift */,
+				E0CA761C24E6691100A80658 /* CALayer+Extension.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0CA760224E53F2900A80658 /* ToastView.xib in Resources */,
+				E0CA761224E586A100A80658 /* ReusableToast.xib in Resources */,
 				E0CA75DF24E2DF6900A80658 /* LaunchScreen.storyboard in Resources */,
 				E0CA75DC24E2DF6900A80658 /* Assets.xcassets in Resources */,
 				E0CA75DA24E2DF6700A80658 /* Main.storyboard in Resources */,
@@ -232,9 +261,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0CA75FE24E53CED00A80658 /* ToastView.swift in Sources */,
+				E0CA761024E5869A00A80658 /* ReusableToast.swift in Sources */,
+				E0CA761D24E6691100A80658 /* CALayer+Extension.swift in Sources */,
 				E0CA75D724E2DF6700A80658 /* ViewController.swift in Sources */,
 				E0CA75D324E2DF6700A80658 /* AppDelegate.swift in Sources */,
 				E0CA75D524E2DF6700A80658 /* SceneDelegate.swift in Sources */,
+				E0CA761B24E652BD00A80658 /* UIView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

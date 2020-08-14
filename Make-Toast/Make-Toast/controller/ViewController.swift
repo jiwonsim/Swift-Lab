@@ -20,13 +20,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapHardToast(_ sender: Any) {
-        let toast = ToastView(frame: CGRect(x: 15, y: self.view.frame.height - 180, width: self.view.frame.width - 30, height: 150))
-        
-        toast.populate()
-        self.view.addSubview(toast)
-        toast.animate()
+        let toast = ToastView()
+        toast.populate(emoji: emojiTextField.desc, title: titleTextField.desc, desc: messageTextField.desc)
+        toast.anchor(self.view,
+                     bottom: view.bottomAnchor, paddingBottom: -30,
+                     left: view.leftAnchor, paddingLeft: 15,
+                     right: view.rightAnchor, paddingRight: -15,
+                     height: 150)
+        toast.animateForToast()
     }
     
+    @IBAction func didTapToastButton(_ sender: Any) {
+        let toast = ReusableToast()
+        toast.populate(titleTextField.desc)
+        toast.translatesAutoresizingMaskIntoConstraints = false
+        
+        toast.anchor(self.view,
+                     bottom: view.bottomAnchor, paddingBottom: -30,
+                     left: view.leftAnchor, paddingLeft: 15,
+                     right: view.rightAnchor, paddingRight: -15)
+        toast.animateForToast()
+    }
     
     func showSimpleToast(_ title: String?, message: String? = "", controller: UIViewController, delay: Double) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -54,6 +68,12 @@ class ViewController: UIViewController {
         titleTextField.autocorrectionType = .no
         messageTextField.autocorrectionType = .no
     }
+}
 
 
+extension UITextField {
+    var desc: String? {
+        if self.text == "" { return nil }
+        return self.text
+    }
 }

@@ -23,16 +23,16 @@ class ToastView: UIView {
         commonInit()
     }
     
-    func populate(emoji: String? = "🐐", title: String? = "Love Johnny", desc: String? = "Johnny, you're the goat") {
+    func populate(emoji: String?, title: String?, desc: String?) {
         self.backgroundColor = .white
         self.alpha = 0.0
         self.layer.cornerRadius = 50
         
-        self.layer.applySketchShadow(color: .black, alpha: 0.2, blur: 15)
+        self.layer.applySketchShadow()
         
-        emojiLabel.text = emoji
-        titleLabel.text = title
-        descLabel.text = desc
+        emojiLabel.text = emoji ?? "🐐"
+        titleLabel.text = title ?? "Love Johnny"
+        descLabel.text = desc ?? "Johnny, you're the goat"
     }
     
     func commonInit() {
@@ -45,40 +45,5 @@ class ToastView: UIView {
         let nib = UINib(nibName: "ToastView", bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
-    
-    func animate() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.alpha = 0.8
-        }) { (true) in
-            UIView.animate(withDuration: 0.5, delay: 2.0, options: .curveEaseOut, animations: {
-                 self.alpha = 0.0
-            }, completion: {(isCompleted) in
-                self.removeFromSuperview()
-            })
-        }
-        
-    }
 }
 
-extension CALayer {
-    func applySketchShadow(color: UIColor = .black,
-                           alpha: Float = 0.5,
-                           x: CGFloat = 0,
-                           y: CGFloat = 2,
-                           blur: CGFloat = 4,
-                           spread: CGFloat = 0) {
-        shadowColor = color.cgColor
-        shadowOpacity = alpha
-        shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur/2.0
-        if spread == 0 {
-            shadowPath = nil
-        } else {
-            let dx = -spread
-            let rect = bounds.insetBy(dx: dx, dy: dx)
-            shadowPath = UIBezierPath(rect: rect).cgPath
-        }
-        
-        shouldRasterize = true 
-    }
-}

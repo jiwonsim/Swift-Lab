@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hjw-da-MdA">
-                                <rect key="frame" x="57" y="362" width="300" height="182"/>
+                                <rect key="frame" x="57" y="344.5" width="300" height="217"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emoji" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwy-So-ycP">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
@@ -45,6 +45,13 @@
                                         <state key="normal" title="Toast with Reusable View"/>
                                         <connections>
                                             <action selector="didTapHardToast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAx-SQ-fqV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAa-xO-YOD">
+                                        <rect key="frame" x="0.0" y="187" width="300" height="30"/>
+                                        <state key="normal" title="with UIView Using Container View"/>
+                                        <connections>
+                                            <action selector="didTapToastButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7WA-Pz-6oM"/>
                                         </connections>
                                     </button>
                                 </subviews>
