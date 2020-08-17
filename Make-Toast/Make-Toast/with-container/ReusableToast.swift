@@ -21,10 +21,15 @@ class ReusableToast: UIView {
         self.backgroundColor = UIColor.clear
         self.layer.applySketchShadow()
         
-        containerView.layer.cornerRadius = containerView.frame.height / 4
-//        print(containerView.layer.cornerRadius)
+        titleLabel.font = titleLabel.font.withSize(15)
+        
         containerView.backgroundColor = backgroundColor
         containerView.layer.masksToBounds = true
+    }
+    
+    override func layoutSubviews() {
+        print(#function, containerView.frame)
+        containerView.layer.cornerRadius = containerView.frame.height / 2
     }
     
     func commonInit() {

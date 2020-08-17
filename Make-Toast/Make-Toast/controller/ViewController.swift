@@ -22,23 +22,14 @@ class ViewController: UIViewController {
     @IBAction func didTapHardToast(_ sender: Any) {
         let toast = ToastView()
         toast.populate(emoji: emojiTextField.desc, title: titleTextField.desc, desc: messageTextField.desc)
-        toast.anchor(self.view,
-                     bottom: view.bottomAnchor, paddingBottom: -30,
-                     left: view.leftAnchor, paddingLeft: 15,
-                     right: view.rightAnchor, paddingRight: -15,
-                     height: 150)
+        toast.anchor(self.view, usage: .toast(value: .completed))
         toast.animateForToast()
     }
     
     @IBAction func didTapToastButton(_ sender: Any) {
         let toast = ReusableToast()
         toast.populate(titleTextField.desc)
-        toast.translatesAutoresizingMaskIntoConstraints = false
-        
-        toast.anchor(self.view,
-                     bottom: view.bottomAnchor, paddingBottom: -30,
-                     left: view.leftAnchor, paddingLeft: 15,
-                     right: view.rightAnchor, paddingRight: -15)
+        toast.anchor(self.view, usage: .toast(value: .updated))
         toast.animateForToast()
     }
     

@@ -8,9 +8,14 @@
 
 import UIKit
 
-enum Toast {
+enum Usage {
     case normal
-    case special
+    case toast(value: Toast)
+}
+
+enum Toast {
+    case completed
+    case updated
 }
 
 enum Relation {
@@ -33,11 +38,11 @@ extension UIView {
         }
     }
     
-    func anchor(_ superView: UIView,
+    func setAnchor(_ superView: UIView,
                 top: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat = 0,
                 bottom: NSLayoutYAxisAnchor? = nil, paddingBottom: CGFloat = 0,
-                left: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0,
-                right: NSLayoutXAxisAnchor? = nil, paddingRight: CGFloat = 0,
+                leading: NSLayoutXAxisAnchor? = nil, paddingLeading: CGFloat = 0,
+                trailing: NSLayoutXAxisAnchor? = nil, paddingTrailing: CGFloat = 0,
                 centerX: NSLayoutXAxisAnchor? = nil,
                 centerY: NSLayoutYAxisAnchor? = nil,
                 width: CGFloat = 0, widthRelation: Relation = .equal,
@@ -49,19 +54,23 @@ extension UIView {
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
         }
+        
         if let bottom = bottom {
             bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
         }
-        if let left = left {
-            leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        
+        if let leading = leading {
+            leadingAnchor.constraint(equalTo: leading, constant: paddingLeading).isActive = true
         }
-        if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: paddingRight).isActive = true
+        
+        if let trailing = trailing {
+            trailingAnchor.constraint(equalTo: trailing, constant: paddingTrailing).isActive = true
         }
         
         if let centerX = centerX {
             centerXAnchor.constraint(equalTo: centerX).isActive = true
         }
+        
         if let centerY = centerY {
             centerYAnchor.constraint(equalTo: centerY).isActive = true
         }
@@ -76,6 +85,7 @@ extension UIView {
                 widthAnchor.constraint(greaterThanOrEqualToConstant: width).isActive = true
             }
         }
+        
         if height != 0 {
             switch heightRelation {
             case .equal:
@@ -85,6 +95,40 @@ extension UIView {
             case .greaterThan:
                 heightAnchor.constraint(greaterThanOrEqualToConstant: height).isActive = true
             }
+        }
+    }
+    
+    func anchor(_ superView: UIView, usage: Usage,
+                top: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat = 0,
+                bottom: NSLayoutYAxisAnchor? = nil, paddingBottom: CGFloat = 0,
+                leading: NSLayoutXAxisAnchor? = nil, paddingLeading: CGFloat = 0,
+                trailing: NSLayoutXAxisAnchor? = nil, paddingTrailing: CGFloat = 0,
+                centerX: NSLayoutXAxisAnchor? = nil,
+                centerY: NSLayoutYAxisAnchor? = nil,
+                width: CGFloat = 0, widthRelation: Relation = .equal,
+                height: CGFloat = 0, heightRelation: Relation = .equal) {
+        
+        switch usage {
+        case .normal:
+            setAnchor(superView,
+                      top: top, paddingTop: paddingTop,
+                      bottom: bottom, paddingBottom: paddingBottom,
+                      leading: leading, paddingLeading: paddingLeading,
+                      trailing: trailing, paddingTrailing: paddingTrailing,
+                      centerX: centerX, centerY: centerY,
+                      width: width, widthRelation: widthRelation,
+                      height: height, heightRelation: heightRelation)
+        case .toast(value: .completed):
+            setAnchor(superView,
+                      bottom: superView.bottomAnchor, paddingBottom: -30,
+                      leading: superView.leadingAnchor, paddingLeading: 15,
+                      trailing: superView.trailingAnchor, paddingTrailing: -15,
+                      height: 150, heightRelation: .equal)
+        case .toast(value: .updated):
+            setAnchor(superView,
+                      bottom: superView.bottomAnchor, paddingBottom: -30,
+                      leading: superView.leadingAnchor, paddingLeading: 15,
+                      trailing: superView.trailingAnchor, paddingTrailing: -15)
         }
     }
 }
