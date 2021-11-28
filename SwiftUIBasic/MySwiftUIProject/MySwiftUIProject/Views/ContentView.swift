@@ -10,14 +10,6 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     VStack {
-      MapView()
-        .ignoresSafeArea(edges: .top)
-        .frame(height: 300)
-      
-      CircleImage()
-        .offset(y: -75)
-        .padding(.bottom, -75)
-      
       VStack(alignment: .leading) {
         Text("Doori Rock")
           .font(.headline)
